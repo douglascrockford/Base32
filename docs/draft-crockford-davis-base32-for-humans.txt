@@ -4,19 +4,19 @@
 
 Independent                                                 D. Crockford
 Internet-Draft                                                          
-Intended status: Informational                               K. R. Davis
-Expires: 11 June 2026                                      Cisco Systems
-                                                         8 December 2025
+Intended status: Standards Track                             K. R. Davis
+Expires: 1 October 2026                                    Cisco Systems
+                                                           30 March 2026
 
 
                            Base32 for Humans
-                draft-crockford-davis-base32-for-humans
+               draft-crockford-davis-base32-for-humans-00
 
 Abstract
 
-   This document details a formal specification for Douglas Crockford's
-   Base32; an alternate Base32 alphabet which extends the "Handled by
-   Humans" text found in [RFC4648], Section 3.4.  This base features an
+   This document details the formal specification of Base32 for Humans;
+   an alternate Base32 alphabet which extends the "Handled by Humans"
+   text found in Section 3.4 of RFC 4648.  This base features an
    alphabet curated for expressing numbers in a form that can be
    conveniently and accurately transmitted between humans and computer
    systems.
@@ -36,11 +36,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 June 2026.
+   This Internet-Draft will expire on 1 October 2026.
 
 Copyright Notice
 
-   Copyright (c) 2025 IETF Trust and the persons identified as the
+   Copyright (c) 2026 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Crockford & Davis         Expires 11 June 2026                  [Page 1]
+Crockford & Davis        Expires 1 October 2026                 [Page 1]
 
-Internet-Draft              base32-for-humans              December 2025
+Internet-Draft              base32-for-humans                 March 2026
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -98,20 +98,20 @@ Table of Contents
    standards body.  Since Base32 itself was published with the IETF; it
    is fitting to publish this Base32 variant with the IETF as well.
 
-   This document serves as an informational RFC to provide a standards-
-   based reference for new libraries and for future RFCs to cite.  One
-   example is its use with Universally Unique IDentifiers (UUIDs)
-   defined in [RFC9562], where this alphabet is a recommended alternate
-   encoding method via [new-uuid-encoding-techniques-ietf-draft].
+   This document serves to provide a standards-based reference for new
+   libraries and for future RFCs to cite.  One example is its use with
+   Universally Unique IDentifiers (UUIDs) defined in [RFC9562], where
+   Base32 for Humans is a recommended alternate encoding method via
+   [new-uuid-encoding-techniques-ietf-draft].
 
 
 
 
 
 
-Crockford & Davis         Expires 11 June 2026                  [Page 2]
+Crockford & Davis        Expires 1 October 2026                 [Page 2]
 
-Internet-Draft              base32-for-humans              December 2025
+Internet-Draft              base32-for-humans                 March 2026
 
 
    Where possible, the content of this document mirrors the text of the
@@ -165,9 +165,9 @@ Internet-Draft              base32-for-humans              December 2025
 
 
 
-Crockford & Davis         Expires 11 June 2026                  [Page 3]
+Crockford & Davis        Expires 1 October 2026                 [Page 3]
 
-Internet-Draft              base32-for-humans              December 2025
+Internet-Draft              base32-for-humans                 March 2026
 
 
    The length of the Base32 alphabet (32 characters) allows selecting a
@@ -185,19 +185,20 @@ Internet-Draft              base32-for-humans              December 2025
 
 3.  The Alphabet
 
-   This Base32 alphabet is a superset of the Base16 alphabet and an
-   alternate version of the Base32hex alphabet; both featuring US-ASCII
-   [RFC20] characters.
+   The Base32 for Humans alphabet, which can be referenced as
+   "Base32human", is a superset of the Base16 alphabet and an alternate
+   version of the Base32hex alphabet; both featuring US-ASCII [RFC20]
+   characters.
 
    The encoded data conveys each character as a 5-bit value.  If
    necessary, values are zero-extended as described in Section 3.1 so
    the input data length is a multiple of 5 bits.
 
-   This alphabet excludes four letters: I, L, O, and U.
+   Base32human excludes four letters: I, L, O, and U.
 
    I/i and l/L can be confused with the number 1, O/o can be confused
    with 0, and U can produce accidental obscenities or be confused with
-   V/v.  Note that 5/S/s and 2/Z/z are not modified in this alphabet,
+   V/v.  Note that 5/S/s and 2/Z/z are not modified in Base32human,
    although these characters can look similar in handwriting (see
    [ZB32]).
 
@@ -217,15 +218,15 @@ Internet-Draft              base32-for-humans              December 2025
                      | 03    | 3         | 3        |
                      +-------+-----------+----------+
                      | 04    | 4         | 4        |
-                     +-------+-----------+----------+
 
 
 
-Crockford & Davis         Expires 11 June 2026                  [Page 4]
+Crockford & Davis        Expires 1 October 2026                 [Page 4]
 
-Internet-Draft              base32-for-humans              December 2025
+Internet-Draft              base32-for-humans                 March 2026
 
 
+                     +-------+-----------+----------+
                      | 05    | 5         | 5        |
                      +-------+-----------+----------+
                      | 06    | 6         | 6        |
@@ -273,15 +274,15 @@ Internet-Draft              base32-for-humans              December 2025
                      | 27    | V v       | V        |
                      +-------+-----------+----------+
                      | 28    | W w       | W        |
-                     +-------+-----------+----------+
 
 
 
-Crockford & Davis         Expires 11 June 2026                  [Page 5]
+Crockford & Davis        Expires 1 October 2026                 [Page 5]
 
-Internet-Draft              base32-for-humans              December 2025
+Internet-Draft              base32-for-humans                 March 2026
 
 
+                     +-------+-----------+----------+
                      | 30    | X x       | X        |
                      +-------+-----------+----------+
                      | 31    | Y y       | Y        |
@@ -289,18 +290,18 @@ Internet-Draft              base32-for-humans              December 2025
                      | 32    | Z z       | Z        |
                      +-------+-----------+----------+
 
-                       Table 1: Crockford's Base32
-                            Alphabet as table
+                         Table 1: The Base32 for
+                         Humans Alphabet as table
 
    The Alphabet as a continuous text input can be found in Figure 1.
 
    0123456789ABCDEFGHJKMNPQRSTVWXYZ
 
-               Figure 1: Crockford's Base32 Alphabet as text
+              Figure 1: The Base32 for Humans Alphabet as text
 
 3.1.  Padding
 
-   This alphabet does not use a special padding character.
+   The Base32human alphabet does not use a special padding character.
 
    If the bit length of the input is not a multiple of 5, zero-extend
    the number in the least-significant bit positions to make the length
@@ -316,11 +317,10 @@ Internet-Draft              base32-for-humans              December 2025
    errors, allowing transmission and entry errors to be caught cheaply
    and early.
 
-   The check symbol encodes the number modulo 37 (37 is the smallest
-   prime greater than 32).  Five additional symbols are defined for
-   encoding or decoding the check symbol; these are shown in Crockford's
-   Base32 Checksum Values and extend Crockford's Base32 Alphabet as
-   table.
+   The check symbol encodes the number modulo 37, the smallest prime
+   greater than 32.  Five additional symbols are defined for encoding or
+   decoding the check symbol; these are shown in The Base32 for Humans
+   Checksum Values and extend The Base32 for Humans Alphabet as table.
 
    These additional symbols were chosen to avoid confusion with
    punctuation or URL formatting.
@@ -333,9 +333,9 @@ Internet-Draft              base32-for-humans              December 2025
 
 
 
-Crockford & Davis         Expires 11 June 2026                  [Page 6]
+Crockford & Davis        Expires 1 October 2026                 [Page 6]
 
-Internet-Draft              base32-for-humans              December 2025
+Internet-Draft              base32-for-humans                 March 2026
 
 
                       +=======+==========+==========+
@@ -352,15 +352,15 @@ Internet-Draft              base32-for-humans              December 2025
                       | 36    | U u      | U        |
                       +-------+----------+----------+
 
-                        Table 2: Crockford's Base32
-                              Checksum Values
+                          Table 2: The Base32 for
+                           Humans Checksum Values
 
-   The the checksums postfixed to the Crockford's Base32 Alphabet as
-   text can be found in Crockford's Base32 Alphabet with Checksums.
+   The the checksums postfixed to the The Base32 for Humans Alphabet as
+   text can be found in The Base32 for Humans Alphabet with Checksums.
 
    0123456789ABCDEFGHJKMNPQRSTVWXYZ*~$=U
 
-            Figure 2: Crockford's Base32 Alphabet with Checksums
+          Figure 2: The Base32 for Humans Alphabet with Checksums
 
    Where these symbols prove problematic for various application use
    cases, implementations MAY strip checksum values, utilize percent-
@@ -389,9 +389,9 @@ Internet-Draft              base32-for-humans              December 2025
 
 
 
-Crockford & Davis         Expires 11 June 2026                  [Page 7]
+Crockford & Davis        Expires 1 October 2026                 [Page 7]
 
-Internet-Draft              base32-for-humans              December 2025
+Internet-Draft              base32-for-humans                 March 2026
 
 
 6.  Security Considerations
@@ -445,9 +445,9 @@ Internet-Draft              base32-for-humans              December 2025
 
 
 
-Crockford & Davis         Expires 11 June 2026                  [Page 8]
+Crockford & Davis        Expires 1 October 2026                 [Page 8]
 
-Internet-Draft              base32-for-humans              December 2025
+Internet-Draft              base32-for-humans                 March 2026
 
 
    [new-uuid-encoding-techniques-ietf-draft]
@@ -501,15 +501,15 @@ B.1.  Encoding
 
 
 
-Crockford & Davis         Expires 11 June 2026                  [Page 9]
+Crockford & Davis        Expires 1 October 2026                 [Page 9]
 
-Internet-Draft              base32-for-humans              December 2025
+Internet-Draft              base32-for-humans                 March 2026
 
 
            | 123456789 | 0XDWT58U     | Y         | Integer    |
            +-----------+--------------+-----------+------------+
 
-                        Table 3: Base32 Encode Table
+                  Table 3: Base32 for Humans Encode Table
 
 B.2.  Decoding
 
@@ -536,7 +536,7 @@ B.2.  Decoding
       |             |              | alphabet, decoded as integer   |
       +-------------+--------------+--------------------------------+
 
-                        Table 4: Base32 Decode Table
+                  Table 4: Base32 for Humans Decode Table
 
 Authors' Addresses
 
@@ -557,4 +557,4 @@ Authors' Addresses
 
 
 
-Crockford & Davis         Expires 11 June 2026                 [Page 10]
+Crockford & Davis        Expires 1 October 2026                [Page 10]

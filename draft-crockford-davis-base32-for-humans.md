@@ -1,11 +1,11 @@
 ---
 title: Base32 for Humans
 abbrev: base32-for-humans
-category: info
+category: std
 
-docname: draft-crockford-davis-base32-for-humans
+docname: draft-crockford-davis-base32-for-humans-00
 submissiontype: IETF
-date: 2025
+date: 2026
 consensus: true
 v: 3
 keyword:
@@ -26,7 +26,7 @@ normative:
   RFC4648:
 
 informative:
-  RFC9562: 
+  RFC9562:
   IEEEBase62:
     target: https://ieeexplore.ieee.org/document/4737287
     title: A secure, lossless, and compressed Base62 encoding
@@ -60,7 +60,7 @@ informative:
 
 --- abstract
 
-This document details a formal specification for Douglas Crockford's Base32; an alternate Base32 alphabet which extends the "Handled by Humans" text found in {{RFC4648, Section 3.4}}.
+This document details the formal specification of Base32 for Humans; an alternate Base32 alphabet which extends the "Handled by Humans" text found in Section 3.4 of RFC 4648.
 This base features an alphabet curated for expressing numbers in a form that can be conveniently and accurately transmitted between humans and computer systems.
 
 --- middle
@@ -71,8 +71,8 @@ Douglas Crockford's Base32 has been published at {{DCB32}} since the early 2000s
 This Base32 variant alphabet has been widely implemented and tested across the industry as an alternative Base32 ({{RFC4648, Section 6}}) and Base32hex ({{RFC4648, Section 7}}); however it does not have a standards-based document published with any standards body.
 Since Base32 itself was published with the IETF; it is fitting to publish this Base32 variant with the IETF as well.
 
-This document serves as an informational RFC to provide a standards-based reference for new libraries and for future RFCs to cite.
-One example is its use with Universally Unique IDentifiers (UUIDs) defined in {{RFC9562}}, where this alphabet is a recommended alternate encoding method via {{new-uuid-encoding-techniques-ietf-draft}}.
+This document serves to provide a standards-based reference for new libraries and for future RFCs to cite.
+One example is its use with Universally Unique IDentifiers (UUIDs) defined in {{RFC9562}}, where Base32 for Humans is a recommended alternate encoding method via {{new-uuid-encoding-techniques-ietf-draft}}.
 
 Where possible, the content of this document mirrors the text of the original webpage, with expanded commentary and clarification where required, such as new encoding and decoding test vectors and comparisons to newer BaseXX alphabets.
 
@@ -114,15 +114,15 @@ As a result, Z-Base-32 does not follow US-ASCII collation ({{RFC20}}) and does n
 
 # The Alphabet {#alphabet}
 
-This Base32 alphabet is a superset of the Base16 alphabet and an alternate version of the Base32hex alphabet; both featuring US-ASCII {{RFC20}} characters.
+The Base32 for Humans alphabet, which can be referenced as "Base32human", is a superset of the Base16 alphabet and an alternate version of the Base32hex alphabet; both featuring US-ASCII {{RFC20}} characters.
 
 The encoded data conveys each character as a 5-bit value.
 If necessary, values are zero-extended as described in {{padding}} so the input data length is a multiple of 5 bits.
 
-This alphabet excludes four letters: I, L, O, and U.
+Base32human excludes four letters: I, L, O, and U.
 
 I/i and l/L can be confused with the number 1, O/o can be confused with 0, and U can produce accidental obscenities or be confused with V/v.
-Note that 5/S/s and 2/Z/z are not modified in this alphabet, although these characters can look similar in handwriting (see {{ZB32}}).
+Note that 5/S/s and 2/Z/z are not modified in Base32human, although these characters can look similar in handwriting (see {{ZB32}}).
 
 {{alphabetTable}} details the alphabet characters along with their respective decoding and encoding values.
 When encoding, only uppercase letters are used.
@@ -162,18 +162,18 @@ For more information on decoding, see {{decoding}}.
 | 30    | X x       | X        |
 | 31    | Y y       | Y        |
 | 32    | Z z       | Z        |
-{: #alphabetTable title='Crockford's Base32 Alphabet as table'}
+{: #alphabetTable title='The Base32 for Humans Alphabet as table'}
 
 The Alphabet as a continuous text input can be found in {{alphabetText}}.
 
 ~~~
 0123456789ABCDEFGHJKMNPQRSTVWXYZ
 ~~~
-{: #alphabetText title='Crockford's Base32 Alphabet as text'}
+{: #alphabetText title='The Base32 for Humans Alphabet as text'}
 
 ## Padding {#padding}
 
-This alphabet does not use a special padding character.
+The Base32human alphabet does not use a special padding character.
 
 If the bit length of the input is not a multiple of 5, zero-extend the number in the least-significant bit positions to make the length a multiple of 5.
 
@@ -184,7 +184,7 @@ For example if the data is a 4-bit value `0b1111` the padded data would be a 5-b
 An application MAY append a check symbol to a symbol string.
 This check symbol can detect symbol-substitution and symbol-transposition errors, allowing transmission and entry errors to be caught cheaply and early.
 
-The check symbol encodes the number modulo 37 (37 is the smallest prime greater than 32).
+The check symbol encodes the number modulo 37, the smallest prime greater than 32.
 Five additional symbols are defined for encoding or decoding the check symbol; these are shown in {{checksumTable}}{: format="title"} and extend {{alphabetTable}}{: format="title"}.
 
 These additional symbols were chosen to avoid confusion with punctuation or URL formatting.
@@ -196,14 +196,14 @@ These additional symbols were chosen to avoid confusion with punctuation or URL 
 | 34    | $         | $        |
 | 35    | =         | =        |
 | 36    | U u       | U        |
-{: #checksumTable title='Crockford's Base32 Checksum Values'}
+{: #checksumTable title='The Base32 for Humans Checksum Values'}
 
 The the checksums postfixed to the {{alphabetText}}{: format="title"} can be found in {{checksumText}}{: format="title"}.
 
 ~~~
 0123456789ABCDEFGHJKMNPQRSTVWXYZ*~$=U
 ~~~
-{: #checksumText title='Crockford's Base32 Alphabet with Checksums'}
+{: #checksumText title='The Base32 for Humans Alphabet with Checksums'}
 
 Where these symbols prove problematic for various application use cases, implementations MAY strip checksum values, utilize percent-encoding, or other application-specific methods to ensure proper handling and delivery of the checksum value.
 
@@ -259,7 +259,7 @@ The following text vectors start with a base of those found in {{RFC4648}} and t
 | `test`      | `EHJQ6X0`          | N         | Text       |
 | `test`      | `EHJQ6X0V`         | Y         | Text       |
 | `123456789` | `0XDWT58U`         | Y         | Integer    |
-{: #encodeTable title='Base32 Encode Table'}
+{: #encodeTable title='Base32 for Humans Encode Table'}
 
 ## Decoding {#test_vectors_decode}
 
@@ -274,4 +274,4 @@ The following text vectors start with a base of those found in {{RFC4648}} and t
 | `CSQPYRK1E86`  | `foobar`      | Checksum 1, decoded as text     |
 | `EHJQ6X0V`     | `test`        | Checksum 2, decoded as text     |
 | `0XDWT58U`     | `123456789`   | Checksum value of extended alphabet, decoded as integer |
-{: #decodeTable title='Base32 Decode Table'}
+{: #decodeTable title='Base32 for Humans Decode Table'}

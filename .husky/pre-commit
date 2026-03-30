@@ -1,0 +1,7 @@
+kdrfc -rthv ./draft-crockford-davis-base32-for-humans.md
+
+mv ./draft-crockford-davis-base32-for-humans.txt ./docs/
+mv ./draft-crockford-davis-base32-for-humans.html ./docs/
+mv ./draft-crockford-davis-base32-for-humans.xml ./docs/
+
+git add docs/draft-crockford-davis-base32-for-humans.txt docs/draft-crockford-davis-base32-for-humans.html docs/draft-crockford-davis-base32-for-humans.xml

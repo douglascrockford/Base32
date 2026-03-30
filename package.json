@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "prepare": "husky && kdrfc -rthv ./draft-crockford-davis-base32-for-humans.md && mv ./draft-crockford-davis-base32-for-humans.txt ./docs/ && mv ./draft-crockford-davis-base32-for-humans.html ./docs/ && mv ./draft-crockford-davis-base32-for-humans.xml ./docs/",
+    "lint": "kdrfc -ir ./draft-crockford-davis-base32-for-humans.md > idnits.txt && rm -f ./draft-crockford-davis-base32-for-humans.txt ./draft-crockford-davis-base32-for-humans.xml"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
+}
