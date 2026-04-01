@@ -35,7 +35,7 @@ informative:
     date: 2008-11
   Base58btc:
     target: https://github.com/bitcoin/bitcoin/blob/master/src/base58.cpp
-    title: A secure, lossless, and compressed Base62 encoding
+    title: Base58 Bitcoin
     author:
     - org: Bitcoin
     date: 2008-11
@@ -114,15 +114,15 @@ As a result, Z-Base-32 does not follow US-ASCII collation ({{RFC20}}) and does n
 
 # The Alphabet {#alphabet}
 
-The Base32 for Humans alphabet, which can be referenced as "Base32human", is a superset of the Base16 alphabet and an alternate version of the Base32hex alphabet; both featuring US-ASCII {{RFC20}} characters.
+The Base32 for Humans alphabet, which can be referenced as "Base32plus", is a superset of the Base16 alphabet and an alternate version of the Base32hex alphabet; both featuring US-ASCII {{RFC20}} characters.
 
 The encoded data conveys each character as a 5-bit value.
 If necessary, values are zero-extended as described in {{padding}} so the input data length is a multiple of 5 bits.
 
-Base32human excludes four letters: I, L, O, and U.
+Base32plus excludes four letters: I, L, O, and U.
 
 I/i and l/L can be confused with the number 1, O/o can be confused with 0, and U can produce accidental obscenities or be confused with V/v.
-Note that 5/S/s and 2/Z/z are not modified in Base32human, although these characters can look similar in handwriting (see {{ZB32}}).
+Note that 5/S/s and 2/Z/z are not modified in Base32plus, although these characters can look similar in handwriting (see {{ZB32}}).
 
 {{alphabetTable}} details the alphabet characters along with their respective decoding and encoding values.
 When encoding, only uppercase letters are used.
@@ -173,7 +173,7 @@ The Alphabet as a continuous text input can be found in {{alphabetText}}.
 
 ## Padding {#padding}
 
-The Base32human alphabet does not use a special padding character.
+The Base32plus alphabet does not use a special padding character.
 
 If the bit length of the input is not a multiple of 5, zero-extend the number in the least-significant bit positions to make the length a multiple of 5.
 

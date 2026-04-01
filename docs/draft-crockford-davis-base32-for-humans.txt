@@ -5,8 +5,8 @@
 Independent                                                 D. Crockford
 Internet-Draft                                                          
 Intended status: Standards Track                             K. R. Davis
-Expires: 1 October 2026                                    Cisco Systems
-                                                           30 March 2026
+Expires: 3 October 2026                                    Cisco Systems
+                                                            1 April 2026
 
 
                            Base32 for Humans
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 October 2026.
+   This Internet-Draft will expire on 3 October 2026.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Crockford & Davis        Expires 1 October 2026                 [Page 1]
+Crockford & Davis        Expires 3 October 2026                 [Page 1]
 
-Internet-Draft              base32-for-humans                 March 2026
+Internet-Draft              base32-for-humans                 April 2026
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Crockford & Davis        Expires 1 October 2026                 [Page 2]
+Crockford & Davis        Expires 3 October 2026                 [Page 2]
 
-Internet-Draft              base32-for-humans                 March 2026
+Internet-Draft              base32-for-humans                 April 2026
 
 
    Where possible, the content of this document mirrors the text of the
@@ -165,9 +165,9 @@ Internet-Draft              base32-for-humans                 March 2026
 
 
 
-Crockford & Davis        Expires 1 October 2026                 [Page 3]
+Crockford & Davis        Expires 3 October 2026                 [Page 3]
 
-Internet-Draft              base32-for-humans                 March 2026
+Internet-Draft              base32-for-humans                 April 2026
 
 
    The length of the Base32 alphabet (32 characters) allows selecting a
@@ -186,7 +186,7 @@ Internet-Draft              base32-for-humans                 March 2026
 3.  The Alphabet
 
    The Base32 for Humans alphabet, which can be referenced as
-   "Base32human", is a superset of the Base16 alphabet and an alternate
+   "Base32plus", is a superset of the Base16 alphabet and an alternate
    version of the Base32hex alphabet; both featuring US-ASCII [RFC20]
    characters.
 
@@ -194,11 +194,11 @@ Internet-Draft              base32-for-humans                 March 2026
    necessary, values are zero-extended as described in Section 3.1 so
    the input data length is a multiple of 5 bits.
 
-   Base32human excludes four letters: I, L, O, and U.
+   Base32plus excludes four letters: I, L, O, and U.
 
    I/i and l/L can be confused with the number 1, O/o can be confused
    with 0, and U can produce accidental obscenities or be confused with
-   V/v.  Note that 5/S/s and 2/Z/z are not modified in Base32human,
+   V/v.  Note that 5/S/s and 2/Z/z are not modified in Base32plus,
    although these characters can look similar in handwriting (see
    [ZB32]).
 
@@ -221,9 +221,9 @@ Internet-Draft              base32-for-humans                 March 2026
 
 
 
-Crockford & Davis        Expires 1 October 2026                 [Page 4]
+Crockford & Davis        Expires 3 October 2026                 [Page 4]
 
-Internet-Draft              base32-for-humans                 March 2026
+Internet-Draft              base32-for-humans                 April 2026
 
 
                      +-------+-----------+----------+
@@ -277,9 +277,9 @@ Internet-Draft              base32-for-humans                 March 2026
 
 
 
-Crockford & Davis        Expires 1 October 2026                 [Page 5]
+Crockford & Davis        Expires 3 October 2026                 [Page 5]
 
-Internet-Draft              base32-for-humans                 March 2026
+Internet-Draft              base32-for-humans                 April 2026
 
 
                      +-------+-----------+----------+
@@ -301,7 +301,7 @@ Internet-Draft              base32-for-humans                 March 2026
 
 3.1.  Padding
 
-   The Base32human alphabet does not use a special padding character.
+   The Base32plus alphabet does not use a special padding character.
 
    If the bit length of the input is not a multiple of 5, zero-extend
    the number in the least-significant bit positions to make the length
@@ -333,9 +333,9 @@ Internet-Draft              base32-for-humans                 March 2026
 
 
 
-Crockford & Davis        Expires 1 October 2026                 [Page 6]
+Crockford & Davis        Expires 3 October 2026                 [Page 6]
 
-Internet-Draft              base32-for-humans                 March 2026
+Internet-Draft              base32-for-humans                 April 2026
 
 
                       +=======+==========+==========+
@@ -389,9 +389,9 @@ Internet-Draft              base32-for-humans                 March 2026
 
 
 
-Crockford & Davis        Expires 1 October 2026                 [Page 7]
+Crockford & Davis        Expires 3 October 2026                 [Page 7]
 
-Internet-Draft              base32-for-humans                 March 2026
+Internet-Draft              base32-for-humans                 April 2026
 
 
 6.  Security Considerations
@@ -429,8 +429,7 @@ Internet-Draft              base32-for-humans                 March 2026
 8.2.  Informative References
 
    [Base58btc]
-              Bitcoin, "A secure, lossless, and compressed Base62
-              encoding", commit fae71d3, November 2008,
+              Bitcoin, "Base58 Bitcoin", commit fae71d3, November 2008,
               <https://github.com/bitcoin/bitcoin/blob/master/src/
               base58.cpp>.
 
@@ -445,9 +444,10 @@ Internet-Draft              base32-for-humans                 March 2026
 
 
 
-Crockford & Davis        Expires 1 October 2026                 [Page 8]
+
+Crockford & Davis        Expires 3 October 2026                 [Page 8]
 
-Internet-Draft              base32-for-humans                 March 2026
+Internet-Draft              base32-for-humans                 April 2026
 
 
    [new-uuid-encoding-techniques-ietf-draft]
@@ -501,9 +501,9 @@ B.1.  Encoding
 
 
 
-Crockford & Davis        Expires 1 October 2026                 [Page 9]
+Crockford & Davis        Expires 3 October 2026                 [Page 9]
 
-Internet-Draft              base32-for-humans                 March 2026
+Internet-Draft              base32-for-humans                 April 2026
 
 
            | 123456789 | 0XDWT58U     | Y         | Integer    |
@@ -557,4 +557,4 @@ Authors' Addresses
 
 
 
-Crockford & Davis        Expires 1 October 2026                [Page 10]
+Crockford & Davis        Expires 3 October 2026                [Page 10]
