@@ -7,27 +7,27 @@
 <title>Base32 for Humans</title>
 <meta content="Douglas Crockford" name="author">
 <meta content="Kyzer R. Davis" name="author">
-<meta content="
-       This document details a formal specification for Douglas Crockford's Base32; an alternate Base32 alphabet which extends the &quot;Handled by Humans&quot; text found in  .
+<meta content='
+       This document details the formal specification of Base32 for Humans; an alternate Base32 alphabet which extends the "Handled by Humans" text found in Section 3.4 of RFC 4648.
 This base features an alphabet curated for expressing numbers in a form that can be conveniently and accurately transmitted between humans and computer systems. 
-    " name="description">
-<meta content="xml2rfc 3.31.0" name="generator">
+    ' name="description">
+<meta content="xml2rfc 3.32.0" name="generator">
 <meta content="encoding" name="keyword">
 <meta content="base32" name="keyword">
-<meta content="draft-crockford-davis-base32-for-humans" name="ietf.draft">
+<meta content="draft-crockford-davis-base32-for-humans-00" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.31.0
+  xml2rfc 3.32.0
     Python 3.12.3
     ConfigArgParse 1.7.1
     google-i18n-address 3.1.1
-    intervaltree 3.1.0
+    intervaltree 3.2.1
     Jinja2 3.1.6
     lxml 6.0.2
-    platformdirs 4.5.0
-    pycountry 24.6.1
+    platformdirs 4.9.2
+    pycountry 26.2.16
     PyYAML 6.0.3
     requests 2.32.5
-    wcwidth 0.2.14
+    wcwidth 0.6.0
     weasyprint 65.0
 -->
 <link href="draft-crockford-davis-base32-for-humans.xml" rel="alternate" type="application/rfc+xml">
@@ -1219,11 +1219,11 @@ li > p:last-of-type:only-child {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">base32-for-humans</td>
-<td class="right">December 2025</td>
+<td class="right">April 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Crockford &amp; Davis</td>
-<td class="center">Expires 11 June 2026</td>
+<td class="center">Expires 3 October 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1233,15 +1233,15 @@ li > p:last-of-type:only-child {
 <dt class="label-workgroup">Workgroup:</dt>
 <dd class="workgroup">Independent</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
-<dd class="internet-draft">draft-crockford-davis-base32-for-humans</dd>
+<dd class="internet-draft">draft-crockford-davis-base32-for-humans-00</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-12-08" class="published">8 December 2025</time>
+<time datetime="2026-04-01" class="published">1 April 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
-<dd class="intended-status">Informational</dd>
+<dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-06-11">11 June 2026</time></dd>
+<dd class="expires"><time datetime="2026-10-03">3 October 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1257,7 +1257,7 @@ li > p:last-of-type:only-child {
 <h1 id="title">Base32 for Humans</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">This document details a formal specification for Douglas Crockford's Base32; an alternate Base32 alphabet which extends the "Handled by Humans" text found in <span>[<a href="#RFC4648" class="cite xref">RFC4648</a>], <a href="https://rfc-editor.org/rfc/rfc4648#section-3.4" class="relref">Section 3.4</a></span>.
+<p id="section-abstract-1">This document details the formal specification of Base32 for Humans; an alternate Base32 alphabet which extends the "Handled by Humans" text found in Section 3.4 of RFC 4648.
 This base features an alphabet curated for expressing numbers in a form that can be conveniently and accurately transmitted between humans and computer systems.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <div id="status-of-memo">
@@ -1279,7 +1279,7 @@ This base features an alphabet curated for expressing numbers in a form that can
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 11 June 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 3 October 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1288,7 +1288,7 @@ This base features an alphabet curated for expressing numbers in a form that can
 <a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
         </h2>
 <p id="section-boilerplate.2-1">
-            Copyright (c) 2025 IETF Trust and the persons identified as the
+            Copyright (c) 2026 IETF Trust and the persons identified as the
             document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.2-2">
             This document is subject to BCP 78 and the IETF Trust's Legal
@@ -1382,8 +1382,8 @@ This base features an alphabet curated for expressing numbers in a form that can
 <p id="section-1-1">Douglas Crockford's Base32 has been published at <span>[<a href="#DCB32" class="cite xref">DCB32</a>]</span> since the early 2000s.
 This Base32 variant alphabet has been widely implemented and tested across the industry as an alternative Base32 (<span>[<a href="#RFC4648" class="cite xref">RFC4648</a>], <a href="https://rfc-editor.org/rfc/rfc4648#section-6" class="relref">Section 6</a></span>) and Base32hex (<span>[<a href="#RFC4648" class="cite xref">RFC4648</a>], <a href="https://rfc-editor.org/rfc/rfc4648#section-7" class="relref">Section 7</a></span>); however it does not have a standards-based document published with any standards body.
 Since Base32 itself was published with the IETF; it is fitting to publish this Base32 variant with the IETF as well.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">This document serves as an informational RFC to provide a standards-based reference for new libraries and for future RFCs to cite.
-One example is its use with Universally Unique IDentifiers (UUIDs) defined in <span>[<a href="#RFC9562" class="cite xref">RFC9562</a>]</span>, where this alphabet is a recommended alternate encoding method via <span>[<a href="#new-uuid-encoding-techniques-ietf-draft" class="cite xref">new-uuid-encoding-techniques-ietf-draft</a>]</span>.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-2">This document serves to provide a standards-based reference for new libraries and for future RFCs to cite.
+One example is its use with Universally Unique IDentifiers (UUIDs) defined in <span>[<a href="#RFC9562" class="cite xref">RFC9562</a>]</span>, where Base32 for Humans is a recommended alternate encoding method via <span>[<a href="#new-uuid-encoding-techniques-ietf-draft" class="cite xref">new-uuid-encoding-techniques-ietf-draft</a>]</span>.<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">Where possible, the content of this document mirrors the text of the original webpage, with expanded commentary and clarification where required, such as new encoding and decoding test vectors and comparisons to newer BaseXX alphabets.<a href="#section-1-3" class="pilcrow">¶</a></p>
 <div id="goals">
 <section id="section-1.1">
@@ -1447,20 +1447,20 @@ As a result, Z-Base-32 does not follow US-ASCII collation (<span>[<a href="#RFC2
       <h2 id="name-the-alphabet">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-the-alphabet" class="section-name selfRef">The Alphabet</a>
       </h2>
-<p id="section-3-1">This Base32 alphabet is a superset of the Base16 alphabet and an alternate version of the Base32hex alphabet; both featuring US-ASCII <span>[<a href="#RFC20" class="cite xref">RFC20</a>]</span> characters.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-1">The Base32 for Humans alphabet, which can be referenced as "Base32plus", is a superset of the Base16 alphabet and an alternate version of the Base32hex alphabet; both featuring US-ASCII <span>[<a href="#RFC20" class="cite xref">RFC20</a>]</span> characters.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <p id="section-3-2">The encoded data conveys each character as a 5-bit value.
 If necessary, values are zero-extended as described in <a href="#padding" class="auto internal xref">Section 3.1</a> so the input data length is a multiple of 5 bits.<a href="#section-3-2" class="pilcrow">¶</a></p>
-<p id="section-3-3">This alphabet excludes four letters: I, L, O, and U.<a href="#section-3-3" class="pilcrow">¶</a></p>
+<p id="section-3-3">Base32plus excludes four letters: I, L, O, and U.<a href="#section-3-3" class="pilcrow">¶</a></p>
 <p id="section-3-4">I/i and l/L can be confused with the number 1, O/o can be confused with 0, and U can produce accidental obscenities or be confused with V/v.
-Note that 5/S/s and 2/Z/z are not modified in this alphabet, although these characters can look similar in handwriting (see <span>[<a href="#ZB32" class="cite xref">ZB32</a>]</span>).<a href="#section-3-4" class="pilcrow">¶</a></p>
+Note that 5/S/s and 2/Z/z are not modified in Base32plus, although these characters can look similar in handwriting (see <span>[<a href="#ZB32" class="cite xref">ZB32</a>]</span>).<a href="#section-3-4" class="pilcrow">¶</a></p>
 <p id="section-3-5"><a href="#alphabetTable" class="auto internal xref">Table 1</a> details the alphabet characters along with their respective decoding and encoding values.
 When encoding, only uppercase letters are used.
 For more information on decoding, see <a href="#decoding" class="auto internal xref">Section 4</a>.<a href="#section-3-5" class="pilcrow">¶</a></p>
-<span id="name-crockfords-base32-alphabet-"></span><div id="alphabetTable">
+<span id="name-the-base32-for-humans-alpha"></span><div id="alphabetTable">
 <table class="center" id="table-1">
         <caption>
 <a href="#table-1" class="selfRef">Table 1</a>:
-<a href="#name-crockfords-base32-alphabet-" class="selfRef">Crockford's Base32 Alphabet as table</a>
+<a href="#name-the-base32-for-humans-alpha" class="selfRef">The Base32 for Humans Alphabet as table</a>
         </caption>
 <thead>
           <tr>
@@ -1634,7 +1634,7 @@ For more information on decoding, see <a href="#decoding" class="auto internal x
       </table>
 </div>
 <p id="section-3-7">The Alphabet as a continuous text input can be found in <a href="#alphabetText" class="auto internal xref">Figure 1</a>.<a href="#section-3-7" class="pilcrow">¶</a></p>
-<span id="name-crockfords-base32-alphabet-a"></span><div id="alphabetText">
+<span id="name-the-base32-for-humans-alphab"></span><div id="alphabetText">
 <figure id="figure-1">
         <div class="alignLeft art-text artwork" id="section-3-8.1">
 <pre>
@@ -1642,7 +1642,7 @@ For more information on decoding, see <a href="#decoding" class="auto internal x
 </pre>
 </div>
 <figcaption><a href="#figure-1" class="selfRef">Figure 1</a>:
-<a href="#name-crockfords-base32-alphabet-a" class="selfRef">Crockford's Base32 Alphabet as text</a>
+<a href="#name-the-base32-for-humans-alphab" class="selfRef">The Base32 for Humans Alphabet as text</a>
         </figcaption></figure>
 </div>
 <div id="padding">
@@ -1650,7 +1650,7 @@ For more information on decoding, see <a href="#decoding" class="auto internal x
         <h3 id="name-padding">
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-padding" class="section-name selfRef">Padding</a>
         </h3>
-<p id="section-3.1-1">This alphabet does not use a special padding character.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-1">The Base32plus alphabet does not use a special padding character.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 <p id="section-3.1-2">If the bit length of the input is not a multiple of 5, zero-extend the number in the least-significant bit positions to make the length a multiple of 5.<a href="#section-3.1-2" class="pilcrow">¶</a></p>
 <p id="section-3.1-3">For example if the data is a 4-bit value <code>0b1111</code> the padded data would be a 5-bit value <code>0b11110</code>.<a href="#section-3.1-3" class="pilcrow">¶</a></p>
 </section>
@@ -1662,14 +1662,14 @@ For more information on decoding, see <a href="#decoding" class="auto internal x
         </h3>
 <p id="section-3.2-1">An application <span class="bcp14">MAY</span> append a check symbol to a symbol string.
 This check symbol can detect symbol-substitution and symbol-transposition errors, allowing transmission and entry errors to be caught cheaply and early.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
-<p id="section-3.2-2">The check symbol encodes the number modulo 37 (37 is the smallest prime greater than 32).
-Five additional symbols are defined for encoding or decoding the check symbol; these are shown in <a href="#checksumTable" class="internal xref">Crockford's Base32 Checksum Values</a> and extend <a href="#alphabetTable" class="internal xref">Crockford's Base32 Alphabet as table</a>.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
+<p id="section-3.2-2">The check symbol encodes the number modulo 37, the smallest prime greater than 32.
+Five additional symbols are defined for encoding or decoding the check symbol; these are shown in <a href="#checksumTable" class="internal xref">The Base32 for Humans Checksum Values</a> and extend <a href="#alphabetTable" class="internal xref">The Base32 for Humans Alphabet as table</a>.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
 <p id="section-3.2-3">These additional symbols were chosen to avoid confusion with punctuation or URL formatting.<a href="#section-3.2-3" class="pilcrow">¶</a></p>
-<span id="name-crockfords-base32-checksum-"></span><div id="checksumTable">
+<span id="name-the-base32-for-humans-check"></span><div id="checksumTable">
 <table class="center" id="table-2">
           <caption>
 <a href="#table-2" class="selfRef">Table 2</a>:
-<a href="#name-crockfords-base32-checksum-" class="selfRef">Crockford's Base32 Checksum Values</a>
+<a href="#name-the-base32-for-humans-check" class="selfRef">The Base32 for Humans Checksum Values</a>
           </caption>
 <thead>
             <tr>
@@ -1707,8 +1707,8 @@ Five additional symbols are defined for encoding or decoding the check symbol; t
           </tbody>
         </table>
 </div>
-<p id="section-3.2-5">The the checksums postfixed to the <a href="#alphabetText" class="internal xref">Crockford's Base32 Alphabet as text</a> can be found in <a href="#checksumText" class="internal xref">Crockford's Base32 Alphabet with Checksums</a>.<a href="#section-3.2-5" class="pilcrow">¶</a></p>
-<span id="name-crockfords-base32-alphabet-w"></span><div id="checksumText">
+<p id="section-3.2-5">The the checksums postfixed to the <a href="#alphabetText" class="internal xref">The Base32 for Humans Alphabet as text</a> can be found in <a href="#checksumText" class="internal xref">The Base32 for Humans Alphabet with Checksums</a>.<a href="#section-3.2-5" class="pilcrow">¶</a></p>
+<span id="name-the-base32-for-humans-alphabe"></span><div id="checksumText">
 <figure id="figure-2">
           <div class="alignLeft art-text artwork" id="section-3.2-6.1">
 <pre>
@@ -1716,7 +1716,7 @@ Five additional symbols are defined for encoding or decoding the check symbol; t
 </pre>
 </div>
 <figcaption><a href="#figure-2" class="selfRef">Figure 2</a>:
-<a href="#name-crockfords-base32-alphabet-w" class="selfRef">Crockford's Base32 Alphabet with Checksums</a>
+<a href="#name-the-base32-for-humans-alphabe" class="selfRef">The Base32 for Humans Alphabet with Checksums</a>
           </figcaption></figure>
 </div>
 <p id="section-3.2-7">Where these symbols prove problematic for various application use cases, implementations <span class="bcp14">MAY</span> strip checksum values, utilize percent-encoding, or other application-specific methods to ensure proper handling and delivery of the checksum value.<a href="#section-3.2-7" class="pilcrow">¶</a></p>
@@ -1801,7 +1801,7 @@ appear in all capitals, as shown here.<a href="#section-5-1" class="pilcrow">¶<
 <dl class="references">
 <dt id="Base58btc">[Base58btc]</dt>
         <dd>
-<span class="refAuthor">Bitcoin</span>, <span class="refTitle">"A secure, lossless, and compressed Base62 encoding"</span>, <span class="seriesInfo">commit fae71d3</span>, <time datetime="2008-11" class="refDate">November 2008</time>, <span>&lt;<a href="https://github.com/bitcoin/bitcoin/blob/master/src/base58.cpp">https://github.com/bitcoin/bitcoin/blob/master/src/base58.cpp</a>&gt;</span>. </dd>
+<span class="refAuthor">Bitcoin</span>, <span class="refTitle">"Base58 Bitcoin"</span>, <span class="seriesInfo">commit fae71d3</span>, <time datetime="2008-11" class="refDate">November 2008</time>, <span>&lt;<a href="https://github.com/bitcoin/bitcoin/blob/master/src/base58.cpp">https://github.com/bitcoin/bitcoin/blob/master/src/base58.cpp</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="DCB32">[DCB32]</dt>
         <dd>
@@ -1852,11 +1852,11 @@ appear in all capitals, as shown here.<a href="#section-5-1" class="pilcrow">¶<
         <h3 id="name-encoding">
 <a href="#appendix-B.1" class="section-number selfRef">B.1. </a><a href="#name-encoding" class="section-name selfRef">Encoding</a>
         </h3>
-<span id="name-base32-encode-table"></span><div id="encodeTable">
+<span id="name-base32-for-humans-encode-ta"></span><div id="encodeTable">
 <table class="center" id="table-3">
           <caption>
 <a href="#table-3" class="selfRef">Table 3</a>:
-<a href="#name-base32-encode-table" class="selfRef">Base32 Encode Table</a>
+<a href="#name-base32-for-humans-encode-ta" class="selfRef">Base32 for Humans Encode Table</a>
           </caption>
 <thead>
             <tr>
@@ -1977,11 +1977,11 @@ appear in all capitals, as shown here.<a href="#section-5-1" class="pilcrow">¶<
         <h3 id="name-decoding-2">
 <a href="#appendix-B.2" class="section-number selfRef">B.2. </a><a href="#name-decoding-2" class="section-name selfRef">Decoding</a>
         </h3>
-<span id="name-base32-decode-table"></span><div id="decodeTable">
+<span id="name-base32-for-humans-decode-ta"></span><div id="decodeTable">
 <table class="center" id="table-4">
           <caption>
 <a href="#table-4" class="selfRef">Table 4</a>:
-<a href="#name-base32-decode-table" class="selfRef">Base32 Decode Table</a>
+<a href="#name-base32-for-humans-decode-ta" class="selfRef">Base32 for Humans Decode Table</a>
           </caption>
 <thead>
             <tr>
