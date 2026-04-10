@@ -1,13 +1,13 @@
-# Latest Published Version
+# Latest Published Draft
 ```
-Internet-Draft draft-crockford-davis-base32-for-humans-00.txt is now
+Internet-Draft draft-crockford-davis-base32-for-humans-01.txt is now
 available.
 
    Title:   Base32 for Humans
    Authors: Douglas Crockford
             Kyzer R. Davis
-   Name:    draft-crockford-davis-base32-for-humans-00.txt
-   Pages:   10
+   Name:    draft-crockford-davis-base32-for-humans-01.txt
+   Pages:   11
    Dates:   2026-04-10
 
 Abstract:
@@ -21,10 +21,4 @@ Abstract:
 
 The IETF datatracker status page for this Internet-Draft is:
 https://datatracker.ietf.org/doc/draft-crockford-davis-base32-for-humans/
-
-There is also an HTMLized version available at:
-https://datatracker.ietf.org/doc/html/draft-crockford-davis-base32-for-humans-00
-
-Internet-Drafts are also available by rsync at:
-rsync.ietf.org::internet-drafts
 ```
