@@ -5,8 +5,8 @@
 Independent                                                 D. Crockford
 Internet-Draft                                                          
 Intended status: Standards Track                             K. R. Davis
-Expires: 3 October 2026                                    Cisco Systems
-                                                            1 April 2026
+Expires: 12 October 2026                                   Cisco Systems
+                                                           10 April 2026
 
 
                            Base32 for Humans
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 3 October 2026.
+   This Internet-Draft will expire on 12 October 2026.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Crockford & Davis        Expires 3 October 2026                 [Page 1]
+Crockford & Davis        Expires 12 October 2026                [Page 1]
 
 Internet-Draft              base32-for-humans                 April 2026
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Crockford & Davis        Expires 3 October 2026                 [Page 2]
+Crockford & Davis        Expires 12 October 2026                [Page 2]
 
 Internet-Draft              base32-for-humans                 April 2026
 
@@ -165,7 +165,7 @@ Internet-Draft              base32-for-humans                 April 2026
 
 
 
-Crockford & Davis        Expires 3 October 2026                 [Page 3]
+Crockford & Davis        Expires 12 October 2026                [Page 3]
 
 Internet-Draft              base32-for-humans                 April 2026
 
@@ -221,7 +221,7 @@ Internet-Draft              base32-for-humans                 April 2026
 
 
 
-Crockford & Davis        Expires 3 October 2026                 [Page 4]
+Crockford & Davis        Expires 12 October 2026                [Page 4]
 
 Internet-Draft              base32-for-humans                 April 2026
 
@@ -277,7 +277,7 @@ Internet-Draft              base32-for-humans                 April 2026
 
 
 
-Crockford & Davis        Expires 3 October 2026                 [Page 5]
+Crockford & Davis        Expires 12 October 2026                [Page 5]
 
 Internet-Draft              base32-for-humans                 April 2026
 
@@ -333,7 +333,7 @@ Internet-Draft              base32-for-humans                 April 2026
 
 
 
-Crockford & Davis        Expires 3 October 2026                 [Page 6]
+Crockford & Davis        Expires 12 October 2026                [Page 6]
 
 Internet-Draft              base32-for-humans                 April 2026
 
@@ -389,7 +389,7 @@ Internet-Draft              base32-for-humans                 April 2026
 
 
 
-Crockford & Davis        Expires 3 October 2026                 [Page 7]
+Crockford & Davis        Expires 12 October 2026                [Page 7]
 
 Internet-Draft              base32-for-humans                 April 2026
 
@@ -445,7 +445,7 @@ Internet-Draft              base32-for-humans                 April 2026
 
 
 
-Crockford & Davis        Expires 3 October 2026                 [Page 8]
+Crockford & Davis        Expires 12 October 2026                [Page 8]
 
 Internet-Draft              base32-for-humans                 April 2026
 
@@ -501,7 +501,7 @@ B.1.  Encoding
 
 
 
-Crockford & Davis        Expires 3 October 2026                 [Page 9]
+Crockford & Davis        Expires 12 October 2026                [Page 9]
 
 Internet-Draft              base32-for-humans                 April 2026
 
@@ -546,7 +546,7 @@ Authors' Addresses
 
    Kyzer R. Davis
    Cisco Systems
-   Email: kydavis@cisco.com
+   Email: kydavis@cisco.com, kyzer.davis@outlook.com
 
 
 
@@ -557,4 +557,4 @@ Authors' Addresses
 
 
 
-Crockford & Davis        Expires 3 October 2026                [Page 10]
+Crockford & Davis        Expires 12 October 2026               [Page 10]

@@ -15,11 +15,13 @@ pi: [toc, sortrefs, symrefs]
 workgroup: Independent
 
 author:
-  - name: Douglas Crockford
-    email: douglas@crockford.com
-  - name: Kyzer R. Davis
-    email: kydavis@cisco.com
-    org: Cisco Systems
+- name: Douglas Crockford
+  email: douglas@crockford.com
+- name: Kyzer R. Davis
+  email:
+    - kydavis@cisco.com
+    - kyzer.davis@outlook.com
+  org: Cisco Systems
 
 normative:
   RFC20:
