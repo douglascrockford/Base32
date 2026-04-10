@@ -8,11 +8,18 @@ submissiontype: IETF
 date: 2026
 consensus: true
 v: 3
+workgroup: Independent
 keyword:
   - encoding
   - base32
 pi: [toc, sortrefs, symrefs]
-workgroup: Independent
+venue:
+  group: "Revise Universally Unique Identifier Definitions (uuidrev)"
+  type: Working Group
+  mail: uuidrev@ietf.org
+  arch: https://mailarchive.ietf.org/arch/browse/uuidrev/
+  github: douglascrockford/Base32
+  latest: https://github.com/douglascrockford/Base32/blob/draft-00/draft-crockford-davis-base32-for-humans.md
 
 author:
 - name: Douglas Crockford
@@ -49,7 +56,7 @@ informative:
     author:
     - name: Douglas Crockford
   new-uuid-encoding-techniques-ietf-draft:
-    target: https://github.com/uuid6/new-uuid-encoding-techniques-ietf-draft
+    target: https://datatracker.ietf.org/doc/draft-davis-uuidrev-alt-uuid-encoding-methods/
     title: Alternate UUID Encoding Methods
     author:
     - name: Kyzer Davis
@@ -242,6 +249,12 @@ draft-00:
 {: spacing="compact"}
 
 - Initial Release
+
+draft-02:
+
+{: spacing="compact"}
+
+- update front matter venue and alt encoding reference
 
 # Test Vectors {#test_vectors}
 
