@@ -10,7 +10,7 @@ Expires: 12 October 2026                                   Cisco Systems
 
 
                            Base32 for Humans
-               draft-crockford-davis-base32-for-humans-00
+               draft-crockford-davis-base32-for-humans-01
 
 Abstract
 

@@ -3,7 +3,7 @@ title: Base32 for Humans
 abbrev: base32-for-humans
 category: std
 
-docname: draft-crockford-davis-base32-for-humans-00
+docname: draft-crockford-davis-base32-for-humans-01
 submissiontype: IETF
 date: 2026
 consensus: true
